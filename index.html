@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for my beautiful princess ami 🤍🤍🤍</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Pacifico for dreamy script, Quicksand for soft rounded body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tone.js for soft music-box lullaby & gentle chime sound effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+  <style>
+    :root {
+      --bg-cream: #fff9fb;
+      --pink-light: #ffeef5;
+      --pink-mid: #ffd4e5;
+      --lavender-soft: #f5ebff;
+      --pink-accent: #ff85b3;
+      --pink-deep: #df4c84;
+      --text-warm: #583543;
+      --text-soft: #8a6272;
+    }
+
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(145deg, #fff9fb 0%, #ffeef5 45%, #f9f0ff 100%);
+      color: var(--text-warm);
+      overflow-x: hidden;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    .font-script {
+      font-family: 'Pacifico', cursive;
+    }
+
+    /* Soft Glowing Background Orbs */
+    .glow-orb {
+      position: fixed;
+      border-radius: 9999px;
+      filter: blur(75px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.55;
+      animation: orbFloat 14s ease-in-out infinite alternate;
+    }
+
+    @keyframes orbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(25px, -30px) scale(1.12); }
+    }
+
+    /* Ambient Floating Background Hearts */
+    .ambient-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.35;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(105vh) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.42;
+      }
+      85% {
+        opacity: 0.42;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(25deg) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* Cursor / Touch Sparkle Trail */
+    .cursor-trail {
+      position: fixed;
+      pointer-events: none;
+      z-index: 60;
+      animation: trailFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes trailFade {
+      0% {
+        opacity: 0.95;
+        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% - 28px)) scale(1.15) rotate(20deg);
+      }
+    }
+
+    /* Soft Glassmorphism Cards */
+    .dreamy-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2px solid rgba(255, 212, 229, 0.85);
+      box-shadow: 0 14px 36px rgba(255, 133, 179, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    /* 3D Wax-Sealed Envelope */
+    .wax-seal {
+      background: radial-gradient(circle at 30% 30%, #ff94bd, #e04882);
+      box-shadow: 0 8px 20px rgba(224, 72, 130, 0.38), inset 0 2px 5px rgba(255, 255, 255, 0.55);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .envelope-box:hover .wax-seal {
+      transform: scale(1.1) rotate(-6deg);
+    }
+
+    .envelope-flap {
+      background: linear-gradient(180deg, #ffe3ee 0%, #ffd0e2 100%);
+      clip-path: polygon(0 0, 50% 62%, 100% 0);
+      transition: transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-origin: top center;
+    }
+    .envelope-box.opening .envelope-flap {
+      transform: rotateX(180deg);
+    }
+
+    .letter-reveal {
+      animation: unfoldLetter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      transform-origin: top center;
+    }
+
+    @keyframes unfoldLetter {
+      0% {
+        opacity: 0;
+        transform: scaleY(0.88) translateY(-18px);
+      }
+      100% {
+        opacity: 1;
+        transform: scaleY(1) translateY(0);
+      }
+    }
+
+    /* 3D Flip Cards */
+    .flip-card {
+      perspective: 1100px;
+      height: 230px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.72s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 1.65rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.4rem;
+      text-align: center;
+    }
+    .flip-card-front {
+      background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,238,245,0.9));
+      border: 2px solid #ffd4e5;
+      box-shadow: 0 10px 26px rgba(255, 133, 179, 0.12);
+    }
+    .flip-card-back {
+      background: linear-gradient(145deg, #ff99c2, #ff74ab);
+      color: white;
+      transform: rotateY(180deg);
+      border: 2px solid #ffc7dd;
+      box-shadow: 0 12px 30px rgba(223, 76, 132, 0.28);
+    }
+
+    /* Squishy Heart & Pill Buttons */
+    .squishy-btn {
+      background: linear-gradient(135deg, #ff85b3 0%, #ff5794 100%);
+      box-shadow: 0 10px 26px rgba(255, 87, 148, 0.36), inset 0 2px 5px rgba(255, 255, 255, 0.55);
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
+    }
+    .squishy-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 14px 32px rgba(255, 87, 148, 0.46), inset 0 2px 6px rgba(255, 255, 255, 0.65);
+    }
+    .squishy-btn:active {
+      transform: scale(0.92);
+    }
+
+    .big-heart-btn {
+      background: radial-gradient(circle at 30% 25%, #ffa3c7, #ff5996 70%, #e63e7c 100%);
+      box-shadow: 0 16px 38px rgba(255, 89, 150, 0.42), inset 0 4px 10px rgba(255, 255, 255, 0.6);
+      transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .big-heart-btn:hover {
+      transform: scale(1.06);
+    }
+    .big-heart-btn:active {
+      transform: scale(0.88);
+    }
+
+    /* Cozy Coupon Cards */
+    .coupon-card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px dashed #ffc2da;
+      transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .coupon-card:hover {
+      transform: translateY(-3px);
+      border-color: #ff85b3;
+    }
+    .coupon-card.selected {
+      background: linear-gradient(135deg, #fff0f6 0%, #ffe3ef 100%);
+      border: 2px solid #ff6ba3;
+      box-shadow: 0 10px 26px rgba(255, 107, 163, 0.25);
+      transform: scale(1.02);
+    }
+
+    /* Burst Particles */
+    .burst-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 70;
+      font-weight: 700;
+      animation: burstFloat 1.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+    }
+
+    @keyframes burstFloat {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy) - 45px)) scale(1.18);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--dx) * 1.35), calc(-50% + var(--dy) - 120px)) scale(0.9);
+      }
+    }
+
+    /* Gentle Pulse Glow */
+    @keyframes softGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 133, 179, 0.38); }
+      50% { box-shadow: 0 0 36px rgba(255, 133, 179, 0.7); }
+    }
+    .glow-pulse {
+      animation: softGlow 2.6s infinite ease-in-out;
+    }
+
+    /* Princess Pass Keepsake Card */
+    .princess-pass {
+      background: linear-gradient(135deg, #fffdfd 0%, #fff0f6 48%, #f8ebff 100%);
+      border: 3px solid #ff85b3;
+      box-shadow: 0 22px 55px rgba(223, 76, 132, 0.28), inset 0 0 25px rgba(255, 255, 255, 0.9);
+      animation: popIn 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.82) translateY(22px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Cute Brown & White Bears (Milk & Mocha Style) Animations */
+    .bears-stage {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .bear-brown-group {
+      transform-origin: 72px 76px;
+      animation: brownCuddle 3.4s ease-in-out infinite;
+    }
+
+    .bear-white-group {
+      transform-origin: 128px 76px;
+      animation: whiteCuddle 3.4s ease-in-out infinite;
+    }
+
+    .bear-heart-pop {
+      transform-origin: 100px 28px;
+      animation: bearHeartBeat 3.4s ease-in-out infinite;
+    }
+
+    .bear-kiss-lips {
+      opacity: 0;
+      transform-origin: 100px 58px;
+      animation: bearKissMark 3.4s ease-in-out infinite;
+    }
+
+    @keyframes brownCuddle {
+      0%, 100% { transform: translateX(0px) rotate(0deg); }
+      35% { transform: translateX(7px) rotate(7deg); }
+      55% { transform: translateX(10px) rotate(10deg) scale(1.03); }
+      75% { transform: translateX(6px) rotate(5deg); }
+    }
+
+    @keyframes whiteCuddle {
+      0%, 100% { transform: translateX(0px) rotate(0deg); }
+      35% { transform: translateX(-7px) rotate(-7deg); }
+      55% { transform: translateX(-10px) rotate(-10deg) scale(1.03); }
+      75% { transform: translateX(-6px) rotate(-5deg); }
+    }
+
+    @keyframes bearHeartBeat {
+      0%, 100% { transform: translateY(0px) scale(0.88); opacity: 0.78; }
+      50% { transform: translateY(-7px) scale(1.22); opacity: 1; }
+    }
+
+    @keyframes bearKissMark {
+      0%, 38%, 78%, 100% { opacity: 0; transform: scale(0.5) translateY(4px); }
+      52%, 64% { opacity: 1; transform: scale(1.15) translateY(-4px); }
+    }
+
+    /* Extra Tight Hug & Kiss Reaction When Dispenser Tapped */
+    .bears-stage.kissing .bear-brown-group {
+      animation: brownSuperKiss 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    .bears-stage.kissing .bear-white-group {
+      animation: whiteSuperKiss 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    .bears-stage.kissing .bear-kiss-lips {
+      animation: superKissPop 0.65s ease-out forwards;
+    }
+
+    @keyframes brownSuperKiss {
+      0% { transform: translateX(6px) rotate(5deg); }
+      50% { transform: translateX(14px) rotate(14deg) scale(1.08); }
+      100% { transform: translateX(4px) rotate(4deg) scale(1); }
+    }
+
+    @keyframes whiteSuperKiss {
+      0% { transform: translateX(-6px) rotate(-5deg); }
+      50% { transform: translateX(-14px) rotate(-14deg) scale(1.08); }
+      100% { transform: translateX(-4px) rotate(-4deg) scale(1); }
+    }
+
+    @keyframes superKissPop {
+      0% { opacity: 0; transform: scale(0.4) translateY(0px); }
+      45% { opacity: 1; transform: scale(1.45) translateY(-10px); }
+      100% { opacity: 0; transform: scale(1.1) translateY(-22px); }
+    }
+  </style>
+</head>
+<body class="relative selection:bg-pink-200 selection:text-pink-900">
+
+  <!-- Soft Glowing Orbs in Background -->
+  <div class="glow-orb w-72 h-72 bg-pink-200 top-[-40px] left-[-60px]" aria-hidden="true"></div>
+  <div class="glow-orb w-80 h-80 bg-purple-200 top-[35%] right-[-80px]" style="animation-delay: -5s;" aria-hidden="true"></div>
+  <div class="glow-orb w-72 h-72 bg-rose-200 bottom-[5%] left-[-40px]" style="animation-delay: -9s;" aria-hidden="true"></div>
+
+  <!-- Ambient Floating Hearts Container -->
+  <div id="ambient-container" aria-hidden="true"></div>
+
+  <!-- Top Floating Cozy Music Box Toggle -->
+  <div class="fixed top-4 right-4 z-40">
+    <button id="music-toggle" onclick="toggleLullaby()" class="dreamy-card px-4 py-2 rounded-full text-xs sm:text-sm font-bold text-[#df4c84] inline-flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform shadow-md">
+      <span id="music-icon">🎵</span>
+      <span id="music-label">play cozy music box</span>
+    </button>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main class="relative z-10 max-w-2xl mx-auto px-4 pt-16 pb-14 sm:py-20 space-y-14">
+
+    <!-- HERO WELCOME HEADER -->
+    <header class="text-center space-y-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-pink-200 shadow-sm text-xs sm:text-sm font-bold text-pink-500 glow-pulse">
+        <span>✨</span>
+        <span>made with all my heart just for u</span>
+        <span>🤍</span>
+      </div>
+
+      <h1 class="font-script text-4xl sm:text-5xl md:text-6xl text-[#df4c84] drop-shadow-sm pt-1 leading-tight">
+        to my sweetest princess ami
+      </h1>
+
+      <!-- Cute Cuddling Brown & White Bears SVG (Hero) -->
+      <div class="pt-1 flex flex-col items-center justify-center">
+        <div class="bears-stage" onclick="triggerBearHug(this, event)" title="tap the bears">
+          <svg width="210" height="122" viewBox="0 0 200 116" fill="none" xmlns="http://www.w3.org/2000/svg" class="overflow-visible cursor-pointer">
+            <!-- Soft Shadow Under Bears -->
+            <ellipse cx="100" cy="105" rx="68" ry="8" fill="#f7c8dc" opacity="0.55"/>
+
+            <!-- Floating Heart & Kiss Pop Above Bears -->
+            <g class="bear-heart-pop">
+              <path d="M100 28 C96 22, 87 23, 87 30 C87 36, 100 43, 100 43 C100 43, 113 36, 113 30 C113 23, 104 22, 100 28 Z" fill="#ff6ba3"/>
+            </g>
+            <g class="bear-kiss-lips">
+              <text x="100" y="54" text-anchor="middle" font-size="16">💋</text>
+            </g>
+
+            <!-- CHUBBY BROWN BEAR (Left - Mocha Style) -->
+            <g class="bear-brown-group">
+              <!-- Ears -->
+              <circle cx="52" cy="40" r="10" fill="#8b5a3c"/>
+              <circle cx="52" cy="40" r="5.5" fill="#c48f6e"/>
+              <circle cx="84" cy="39" r="10" fill="#8b5a3c"/>
+              <circle cx="84" cy="39" r="5.5" fill="#c48f6e"/>
+              <!-- Chubby Body -->
+              <ellipse cx="68" cy="83" rx="24" ry="21" fill="#8b5a3c"/>
+              <ellipse cx="70" cy="85" rx="14" ry="13" fill="#b88463" opacity="0.5"/>
+              <!-- Round Head -->
+              <ellipse cx="68" cy="58" rx="26" ry="23" fill="#8b5a3c"/>
+              <!-- Muzzle -->
+              <ellipse cx="73" cy="63" rx="10" ry="7.5" fill="#f7e6d8"/>
+              <ellipse cx="74" cy="60.5" rx="3.2" ry="2.2" fill="#4a2c1d"/>
+              <!-- Happy Closed Cute Eyes -->
+              <path d="M58 55 Q61 51 64 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M77 55 Q80 51 83 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <!-- Rosy Cheeks -->
+              <ellipse cx="55" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.75"/>
+              <ellipse cx="85" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.75"/>
+              <!-- Cute Smile -->
+              <path d="M71 64.5 Q74 67.5 77 64.5" stroke="#4a2c1d" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <!-- Hugging Arm Reaching Right -->
+              <ellipse cx="89" cy="79" rx="11" ry="6.5" transform="rotate(-14 89 79)" fill="#7a4d32"/>
+            </g>
+
+            <!-- CHUBBY WHITE BEAR (Right - Milk Style) -->
+            <g class="bear-white-group">
+              <!-- Ears -->
+              <circle cx="116" cy="39" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <circle cx="116" cy="39" r="5" fill="#ffd6e6"/>
+              <circle cx="148" cy="40" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <circle cx="148" cy="40" r="5" fill="#ffd6e6"/>
+              <!-- Chubby Body -->
+              <ellipse cx="132" cy="83" rx="24" ry="21" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <!-- Round Head -->
+              <ellipse cx="132" cy="58" rx="26" ry="23" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <!-- Muzzle -->
+              <ellipse cx="127" cy="63" rx="10" ry="7.5" fill="#fff3f7"/>
+              <ellipse cx="126" cy="60.5" rx="3.2" ry="2.2" fill="#583543"/>
+              <!-- Happy Closed Cute Eyes -->
+              <path d="M117 55 Q120 51 123 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M136 55 Q139 51 142 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <!-- Rosy Cheeks -->
+              <ellipse cx="115" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+              <ellipse cx="145" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+              <!-- Cute Smile -->
+              <path d="M123 64.5 Q126 67.5 129 64.5" stroke="#583543" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <!-- Hugging Arm Reaching Left -->
+              <ellipse cx="111" cy="79" rx="11" ry="6.5" transform="rotate(14 111 79)" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <p class="text-sm sm:text-base text-[#8a6272] font-semibold max-w-lg mx-auto leading-relaxed px-2">
+        no pressure to reply or do anything right now baby js sit back get cozy and let me love on u for a second 🤍🤍🤍
+      </p>
+    </header>
+
+    <!-- HERO INTERACTIVE 3D WAX-SEALED ENVELOPE -->
+    <section id="envelope-section" class="w-full">
+      <!-- Closed Wax-Sealed Envelope -->
+      <div id="envelope-closed" onclick="openEnvelope()" class="envelope-box dreamy-card rounded-3xl p-8 sm:p-11 text-center space-y-6 relative overflow-hidden cursor-pointer select-none">
+        <!-- Envelope Top Flap Visual -->
+        <div class="envelope-flap absolute top-0 left-0 right-0 h-24 opacity-80 pointer-events-none"></div>
+
+        <!-- Decorative Floating Corner Icons -->
+        <span class="absolute top-4 left-5 text-xl opacity-70">🌸</span>
+        <span class="absolute top-4 right-5 text-xl opacity-70">✨</span>
+        <span class="absolute bottom-4 left-6 text-lg opacity-60">🤍</span>
+        <span class="absolute bottom-4 right-6 text-lg opacity-60">🐾</span>
+
+        <!-- Wax Seal Button -->
+        <div class="relative z-10 pt-3">
+          <div class="wax-seal w-24 h-24 mx-auto rounded-full flex items-center justify-center text-4xl text-white border-4 border-pink-200/70">
+            🤍
+          </div>
+        </div>
+
+        <div class="relative z-10 space-y-2">
+          <p class="text-xs uppercase tracking-widest font-bold text-pink-400">sealed with endless love</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#583543]">
+            for my beautiful princess ami 🤍🤍🤍
+          </h2>
+          <p class="text-sm text-[#8a6272] font-semibold">
+            from ur dummy rayan
+          </p>
+        </div>
+
+        <div class="relative z-10 pt-1">
+          <span class="squishy-btn text-white font-bold text-base sm:text-lg px-8 py-4 rounded-full inline-flex items-center gap-2.5">
+            <span>tap the wax seal to open</span>
+            <span>💌✨</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- SECTION 1: A LETTER STRAIGHT FROM UR HUBBY (Revealed on Click) -->
+      <div id="envelope-opened" class="hidden letter-reveal dreamy-card rounded-3xl p-6 sm:p-10 space-y-6 relative">
+        <div class="flex items-center justify-between border-b border-pink-100 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-pink-100 flex items-center justify-center text-2xl">
+              🥺
+            </div>
+            <div>
+              <h2 class="font-script text-2xl sm:text-3xl text-[#df4c84]">a letter straight from my heart</h2>
+              <p class="text-xs text-[#8a6272] font-semibold">zero pressure to text back js read and breathe baby</p>
+            </div>
+          </div>
+          <span class="text-2xl">🤍</span>
+        </div>
+
+        <!-- Letter Page Tabs for Easy Gentle Reading -->
+        <div class="flex items-center justify-center gap-2 bg-pink-50/90 p-1.5 rounded-full border border-pink-200/70 max-w-xs mx-auto">
+          <button id="tab-btn-1" onclick="switchLetterPage(1)" class="flex-1 py-1.5 px-3 rounded-full text-xs font-bold bg-white text-[#df4c84] shadow-sm transition-all cursor-pointer">
+            part 1 im sorry
+          </button>
+          <button id="tab-btn-2" onclick="switchLetterPage(2)" class="flex-1 py-1.5 px-3 rounded-full text-xs font-bold text-[#8a6272] hover:text-[#df4c84] transition-all cursor-pointer">
+            part 2 ur my world
+          </button>
+        </div>
+
+        <!-- Page 1 Content -->
+        <div id="letter-page-1" class="space-y-4 text-sm sm:text-base leading-relaxed text-[#583543] font-semibold">
+          <p>
+            baby i am so sorry for earlier i never ever meant to pressure u or make u feel overwhelmed when u are already carrying so much weight on ur shoulders
+          </p>
+          <p>
+            i know u hate talking about how u feel and i promise i will never force u to say anything before u are ready i js hate knowing my sweet princess is holding all that stress and sadness inside by herself because keeping everything bottled up only makes the weight heavier on ur heart
+          </p>
+          <p class="bg-pink-50/95 border border-pink-200 rounded-2xl p-4 text-[#b83768]">
+            u never have to pretend to be okay with me or worry about ruining my mood because we are a team and i want to carry that weight with u even if u dont know how to explain what ur feeling or if it comes out messy i js want to listen and hold u through it without judging or asking for anything in return 🤍
+          </p>
+          <div class="pt-1 text-center">
+            <button onclick="switchLetterPage(2)" class="text-xs sm:text-sm font-bold text-[#df4c84] bg-pink-100/80 hover:bg-pink-200/80 px-5 py-2 rounded-full transition-colors cursor-pointer">
+              read part 2 my sweet princess 👉🤍
+            </button>
+          </div>
+        </div>
+
+        <!-- Page 2 Content -->
+        <div id="letter-page-2" class="hidden space-y-4 text-sm sm:text-base leading-relaxed text-[#583543] font-semibold">
+          <p>
+            u are my whole world ami and u deserve someone who protects ur peace instead of adding more stress to ur plate i love u so deeply and whether u want to vent everything out or js sit in quiet comfort with me tonight im right here whenever my baby is ready mwah
+          </p>
+          <p>
+            and please never ever think ur a terrible person or that i deserve better because having u in my life is literally the greatest blessing i could ever ask for u are so strong even when u feel like ur falling apart and i appreciate every single ounce of effort u put into us even on ur hardest days
+          </p>
+          <p class="bg-pink-50/95 border border-pink-200 rounded-2xl p-4 text-[#b83768]">
+            i see how much ur dealing with right now and i am so proud of u for getting through each day u are never a burden to me my love and every single feeling u have matters to me more than anything i love u endlessly amiii mwah mwah 🤍🤍🤍
+          </p>
+          <div class="pt-1 text-center">
+            <button onclick="switchLetterPage(1)" class="text-xs sm:text-sm font-bold text-[#8a6272] hover:text-[#df4c84] px-4 py-1.5 rounded-full transition-colors cursor-pointer">
+              👈 back to part 1
+            </button>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-pink-100 flex items-center justify-between text-xs sm:text-sm text-[#8a6272] font-bold">
+          <span>always on ur team</span>
+          <span class="text-[#df4c84]">ur rayan 🤍</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: OPEN WHEN U NEED A REMINDER (INTERACTIVE FLIP CARDS) -->
+    <section class="space-y-6">
+      <div class="text-center space-y-1.5">
+        <h2 class="font-script text-3xl sm:text-4xl text-[#df4c84]">open when u need a reminder</h2>
+        <p class="text-xs sm:text-sm text-[#8a6272] font-semibold">tap each card one by one whenever ur overthinking ✨</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+        <!-- Card 1 -->
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="text-4xl mb-3">☁️</span>
+              <h3 class="font-bold text-lg text-[#583543]">when u feel overwhelmed</h3>
+              <span class="mt-3 px-3 py-1 rounded-full bg-pink-100 text-pink-500 text-xs font-bold">tap to open 🤍</span>
+            </div>
+            <div class="flip-card-back">
+              <p class="text-sm sm:text-base font-bold leading-relaxed">
+                take a deep breath my love u dont have to fix everything today or carry the whole world alone im right beside u holding ur hand through every single hard day
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="text-4xl mb-3">🌷</span>
+              <h3 class="font-bold text-lg text-[#583543]">when u think ur a burden</h3>
+              <span class="mt-3 px-3 py-1 rounded-full bg-pink-100 text-pink-500 text-xs font-bold">tap to open 🤍</span>
+            </div>
+            <div class="flip-card-back">
+              <p class="text-sm sm:text-base font-bold leading-relaxed">
+                stop right there dummy u could never ever be a burden to me loving u and being there for u on ur hardest days is literally my favorite thing in the world
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flip-card" onclick="toggleCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <span class="text-4xl mb-3">🧸</span>
+              <h3 class="font-bold text-lg text-[#583543]">when u miss us being silly</h3>
+              <span class="mt-3 px-3 py-1 rounded-full bg-pink-100 text-pink-500 text-xs font-bold">tap to open 🤍</span>
+            </div>
+            <div class="flip-card-back">
+              <p class="text-sm sm:text-base font-bold leading-relaxed">
+                reminder that i still adore every silly moment with u and being all urs forever mwahhh
+              </p>
+            </div>
+          </div>
+      <!-- Big Squishy Glowing Heart Button & Cuddling Bears -->
+      <div class="py-2 flex flex-col items-center gap-3">
+        <!-- Mini Interactive Bears That Kiss Each Time U Tap -->
+        <div id="dispenser-bears" class="bears-stage">
+          <svg width="164" height="92" viewBox="0 0 200 112" fill="none" xmlns="http://www.w3.org/2000/svg" class="overflow-visible">
+            <g class="bear-heart-pop">
+              <path d="M100 26 C96 20, 87 21, 87 28 C87 34, 100 41, 100 41 C100 41, 113 34, 113 28 C113 21, 104 20, 100 26 Z" fill="#ff6ba3"/>
+            </g>
+            <g class="bear-kiss-lips">
+              <text x="100" y="52" text-anchor="middle" font-size="18">💋</text>
+            </g>
+            <!-- Brown Bear -->
+            <g class="bear-brown-group">
+              <circle cx="52" cy="40" r="10" fill="#8b5a3c"/>
+              <circle cx="84" cy="39" r="10" fill="#8b5a3c"/>
+              <ellipse cx="68" cy="83" rx="24" ry="21" fill="#8b5a3c"/>
+              <ellipse cx="68" cy="58" rx="26" ry="23" fill="#8b5a3c"/>
+              <ellipse cx="73" cy="63" rx="10" ry="7.5" fill="#f7e6d8"/>
+              <ellipse cx="74" cy="60.5" rx="3.2" ry="2.2" fill="#4a2c1d"/>
+              <path d="M58 55 Q61 51 64 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M77 55 Q80 51 83 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <ellipse cx="55" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.75"/>
+              <ellipse cx="85" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.75"/>
+              <ellipse cx="89" cy="79" rx="11" ry="6.5" transform="rotate(-14 89 79)" fill="#7a4d32"/>
+            </g>
+            <!-- White Bear -->
+            <g class="bear-white-group">
+              <circle cx="116" cy="39" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <circle cx="148" cy="40" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <ellipse cx="132" cy="83" rx="24" ry="21" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <ellipse cx="132" cy="58" rx="26" ry="23" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              <ellipse cx="127" cy="63" rx="10" ry="7.5" fill="#fff3f7"/>
+              <ellipse cx="126" cy="60.5" rx="3.2" ry="2.2" fill="#583543"/>
+              <path d="M117 55 Q120 51 123 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <path d="M136 55 Q139 51 142 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+              <ellipse cx="115" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+              <ellipse cx="145" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+              <ellipse cx="111" cy="79" rx="11" ry="6.5" transform="rotate(14 111 79)" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
+
+        <button id="kiss-btn" onclick="dispenseKiss(event)" aria-label="send kisses" class="big-heart-btn glow-pulse w-28 h-28 sm:w-32 sm:h-32 rounded-full inline-flex flex-col items-center justify-center text-white cursor-pointer select-none mx-auto">
+          <span class="text-4xl sm:text-5xl drop-shadow">🤍</span>
+          <span class="text-xs font-bold mt-1 tracking-wide">tap me</span>
+        </button>
+      </div>
+
+      <!-- Milestone Toast Banner -->
+      <div id="milestone-banner" class="hidden bg-gradient-to-r from-pink-100 via-rose-100 to-purple-100 border border-pink-300 rounded-2xl py-2.5 px-4 text-xs sm:text-sm font-bold text-[#c9376f] animate-bounce">
+        ✨ milestone unlocked ✨
+      </div>
+
+      <!-- Live Counter -->
+      <div class="flex items-center justify-center gap-2 text-sm sm:text-base font-bold text-[#8a6272]">
+        <span>kisses sent to ami</span>
+        <span id="kiss-count" class="px-3.5 py-0.5 rounded-full bg-pink-100 text-[#df4c84] text-base sm:text-lg">0</span>
+        <span>💋</span>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PICK WHAT U NEED TONIGHT ZERO PRESSURE -->
+    <section class="dreamy-card rounded-3xl p-7 sm:p-9 space-y-6">
+      <div class="text-center space-y-1.5">
+        <h2 class="font-script text-3xl sm:text-4xl text-[#df4c84]">pick what u need tonight zero pressure</h2>
+        <p class="text-xs sm:text-sm text-[#8a6272] font-semibold">
+          tap whichever cozy coupon feels nicest right now or pick all of them 🤍
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+        <button onclick="selectCoupon(this)" class="coupon-card rounded-2xl p-4 sm:p-5 text-left flex items-center gap-3.5 cursor-pointer">
+          <span class="text-2xl sm:text-3xl">🎙️</span>
+          <div>
+            <p class="font-bold text-sm sm:text-base text-[#583543]">unlimited forehead kisses and voice notes whenever u miss me</p>
+            <p class="text-xs text-[#8a6272] font-semibold mt-0.5">replay whenever u want comfort 🤍</p>
+          </div>
+        </button>
+
+        <button onclick="selectCoupon(this)" class="coupon-card rounded-2xl p-4 sm:p-5 text-left flex items-center gap-3.5 cursor-pointer">
+          <span class="text-2xl sm:text-3xl">📱</span>
+          <div>
+            <p class="font-bold text-sm sm:text-base text-[#583543]">venting to me or js sending random tiktoks with zero pressure to talk</p>
+            <p class="text-xs text-[#8a6272] font-semibold mt-0.5">no explaining needed baby ✨</p>
+          </div>
+        </button>
+
+        <button onclick="selectCoupon(this)" class="coupon-card rounded-2xl p-4 sm:p-5 text-left flex items-center gap-3.5 cursor-pointer">
+          <span class="text-2xl sm:text-3xl">💌</span>
+          <div>
+            <p class="font-bold text-sm sm:text-base text-[#583543]">me spamming u with cute paragraphs until u fall asleep</p>
+            <p class="text-xs text-[#8a6272] font-semibold mt-0.5">wake up to pure love 💤</p>
+          </div>
+        </button>
+
+        <button onclick="selectCoupon(this)" class="coupon-card rounded-2xl p-4 sm:p-5 text-left flex items-center gap-3.5 cursor-pointer">
+          <span class="text-2xl sm:text-3xl">🎮</span>
+          <div>
+            <p class="font-bold text-sm sm:text-base text-[#583543]">playing a quick chill game together or js texting whenever ur ready</p>
+            <p class="text-xs text-[#8a6272] font-semibold mt-0.5">totally at ur own pace 🥺</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Confirmation Message -->
+      <div id="coupon-feedback" class="hidden text-center bg-pink-50 border border-pink-200 rounded-2xl py-3 px-4 text-xs sm:text-sm font-bold text-[#df4c84]">
+        noted baby whenever ur ready ur boy got u covered mwah 🤍
+      </div>
+    </section>
+
+    <!-- FINALE: FORGIVE UR DUMMY HUBBY (ONLY USE OF HUBBY) -->
+    <section id="finale-section" class="dreamy-card rounded-3xl p-7 sm:p-10 text-center space-y-6 relative min-h-[300px] flex flex-col items-center justify-center">
+      <!-- Question State -->
+      <div id="forgive-prompt" class="space-y-6 w-full">
+        <div class="space-y-2">
+          <div class="text-4xl sm:text-5xl mb-1">🥺👉👈</div>
+          <h2 class="font-script text-3xl sm:text-4xl text-[#df4c84]">
+            forgive ur dummy hubby
+          </h2>
+          <p id="dodge-tease" class="text-xs sm:text-sm text-[#8a6272] font-bold min-h-[22px]">
+            no rush at all my sweet princess take all the time u need 🤍
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2 relative">
+          <button id="yes-btn" onclick="acceptForgiveness()" class="squishy-btn text-white font-bold text-base sm:text-lg px-8 py-4 rounded-full cursor-pointer transition-all duration-300">
+            yes i forgive u mwah 🤍
+          </button>
+
+          <button id="no-btn" onmouseover="dodgeButton()" onclick="handleNoClick()" class="bg-white hover:bg-pink-50 text-[#8a6272] border-2 border-pink-200 font-bold text-sm sm:text-base px-6 py-3.5 rounded-full cursor-pointer transition-all duration-200 shadow-sm">
+            no im still mad
+          </button>
+        </div>
+      </div>
+
+      <!-- Keepsake Official Princess Pass (Revealed on Yes) -->
+      <div id="forgive-certificate" class="hidden princess-pass rounded-3xl p-6 sm:p-9 w-full space-y-5 text-center relative overflow-hidden">
+        <!-- Celebrating Kissing Bears on Certificate -->
+        <div class="flex justify-center">
+          <div class="bears-stage kissing">
+            <svg width="176" height="96" viewBox="0 0 200 112" fill="none" xmlns="http://www.w3.org/2000/svg" class="overflow-visible">
+              <g class="bear-heart-pop">
+                <path d="M100 24 C96 18, 87 19, 87 26 C87 32, 100 39, 100 39 C100 39, 113 32, 113 26 C113 19, 104 18, 100 24 Z" fill="#ff5794"/>
+              </g>
+              <g class="bear-brown-group">
+                <circle cx="52" cy="40" r="10" fill="#8b5a3c"/>
+                <circle cx="84" cy="39" r="10" fill="#8b5a3c"/>
+                <ellipse cx="68" cy="83" rx="24" ry="21" fill="#8b5a3c"/>
+                <ellipse cx="68" cy="58" rx="26" ry="23" fill="#8b5a3c"/>
+                <ellipse cx="73" cy="63" rx="10" ry="7.5" fill="#f7e6d8"/>
+                <ellipse cx="74" cy="60.5" rx="3.2" ry="2.2" fill="#4a2c1d"/>
+                <path d="M58 55 Q61 51 64 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                <path d="M77 55 Q80 51 83 55" stroke="#3d2214" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                <ellipse cx="55" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+                <ellipse cx="85" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.8"/>
+                <ellipse cx="89" cy="79" rx="11" ry="6.5" transform="rotate(-14 89 79)" fill="#7a4d32"/>
+              </g>
+              <g class="bear-white-group">
+                <circle cx="116" cy="39" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+                <circle cx="148" cy="40" r="10" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+                <ellipse cx="132" cy="83" rx="24" ry="21" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+                <ellipse cx="132" cy="58" rx="26" ry="23" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+                <ellipse cx="127" cy="63" rx="10" ry="7.5" fill="#fff3f7"/>
+                <ellipse cx="126" cy="60.5" rx="3.2" ry="2.2" fill="#583543"/>
+                <path d="M117 55 Q120 51 123 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                <path d="M136 55 Q139 51 142 55" stroke="#583543" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+                <ellipse cx="115" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.85"/>
+                <ellipse cx="145" cy="61" rx="4.5" ry="2.8" fill="#ff94b8" opacity="0.85"/>
+                <ellipse cx="111" cy="79" rx="11" ry="6.5" transform="rotate(14 111 79)" fill="#fffdfd" stroke="#edd5df" stroke-width="2"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-xs uppercase tracking-widest font-bold text-pink-500">valid forever and ever</p>
+          <h3 class="font-script text-3xl sm:text-4xl text-[#df4c84]">
+            official princess pass
+          </h3>
+        </div>
+
+        <div class="bg-white/85 border border-pink-200 rounded-2xl p-4 sm:p-5 space-y-2 max-w-md mx-auto">
+          <p class="text-xs font-bold text-[#8a6272]">made out exclusively to</p>
+          <p class="text-lg sm:text-xl font-bold text-[#583543]">my beautiful princess ami 🤍🤍🤍</p>
+          <p class="text-xs sm:text-sm text-[#6e4756] font-semibold leading-relaxed pt-1">
+            entitles my sweet girl to unlimited patience zero pressure endless forehead kisses and an obsessed boy who loves u more than anything in the universe mwahhh
+          </p>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <p class="text-sm font-bold text-[#df4c84]">
+            forever urs ur catboy rayan 🐾🤍
+          </p>
+          <div class="inline-block px-4 py-2 rounded-full bg-pink-100/90 border border-pink-200 text-xs font-bold text-[#b83768]">
+            📸 screenshot this and send it to me when ur ready baby
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center pb-8 text-xs text-[#9c7282] font-bold">
+      made with endless love by rayan for ami 🤍🤍🤍
+    </footer>
+
+  </main>
+
+  <script>
+    // Soft Music-Box Lullaby & Chime Synthesizer using Tone.js
+    let synth = null;
+    let lullabyLoop = null;
+    let isMusicPlaying = false;
+
+    function initAudio() {
+      if (!synth && typeof Tone !== "undefined") {
+        synth = new Tone.PolySynth(Tone.Synth, {
+          oscillator: { type: "sine" },
+          envelope: { attack: 0.04, decay: 0.45, sustain: 0.15, release: 1.2 }
+        }).toDestination();
+        synth.volume.value = -16;
+      }
+    }
+
+    function playSoftChime(note = "C5") {
+      try {
+        initAudio();
+        if (synth) {
+          if (Tone.context.state !== "running") {
+            Tone.start();
+          }
+          synth.triggerAttackRelease(note, "8n");
+        }
+      } catch (e) {
+        // Ignore if audio context not yet unlocked
+      }
+    }
+
+    function toggleLullaby() {
+      try {
+        initAudio();
+        if (Tone.context.state !== "running") {
+          Tone.start();
+        }
+
+        const btnLabel = document.getElementById("music-label");
+        const btnIcon = document.getElementById("music-icon");
+
+        if (!isMusicPlaying) {
+          const melody = [
+            "E5", "G5", "B5", "G5",
+            "D5", "F#5", "A5", "F#5",
+            "C5", "E5", "G5", "E5",
+            "B4", "D5", "G5", "B5"
+          ];
+          let step = 0;
+
+          lullabyLoop = new Tone.Loop((time) => {
+            synth.triggerAttackRelease(melody[step % melody.length], "4n", time);
+            step++;
+          }, "4n").start(0);
+
+          Tone.Transport.bpm.value = 84;
+          Tone.Transport.start();
+          isMusicPlaying = true;
+          btnLabel.textContent = "pause cozy music box";
+          btnIcon.textContent = "🎶";
+        } else {
+          if (lullabyLoop) {
+            lullabyLoop.stop();
+            lullabyLoop.dispose();
+            lullabyLoop = null;
+          }
+          Tone.Transport.stop();
+          isMusicPlaying = false;
+          btnLabel.textContent = "play cozy music box";
+          btnIcon.textContent = "🎵";
+        }
+      } catch (e) {
+        // Ignore audio errors gracefully
+      }
+    }
+
+    // Ambient Floating Hearts in Background
+    function createAmbientHearts() {
+      const container = document.getElementById("ambient-container");
+      const symbols = ["🤍", "🩷", "✨", "🌸", "💕", "🐾"];
+      const count = 20;
+
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement("span");
+        el.className = "ambient-heart";
+        el.textContent = symbols[i % symbols.length];
+        el.style.left = Math.random() * 100 + "vw";
+        el.style.fontSize = (14 + Math.random() * 14) + "px";
+        el.style.animationDuration = (13 + Math.random() * 14) + "s";
+        el.style.animationDelay = (-Math.random() * 20) + "s";
+        container.appendChild(el);
+      }
+    }
+
+    // Subtle Cursor / Touch Sparkle Trail
+    let lastTrailTime = 0;
+    function spawnCursorSparkle(x, y) {
+      const now = Date.now();
+      if (now - lastTrailTime < 65) return;
+      lastTrailTime = now;
+
+      const items = ["🤍", "✨", "🩷", "🌸"];
+      const el = document.createElement("span");
+      el.className = "cursor-trail";
+      el.textContent = items[Math.floor(Math.random() * items.length)];
+      el.style.left = x + "px";
+      el.style.top = y + "px";
+      el.style.fontSize = (12 + Math.random() * 8) + "px";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 900);
+    }
+
+    window.addEventListener("mousemove", (e) => spawnCursorSparkle(e.clientX, e.clientY));
+    window.addEventListener("touchmove", (e) => {
+      if (e.touches && e.touches[0]) {
+        spawnCursorSparkle(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    // Hero Wax-Sealed Envelope Opening
+    function openEnvelope() {
+      playSoftChime(["E5", "G5", "B5", "E6"]);
+      const closed = document.getElementById("envelope-closed");
+      const opened = document.getElementById("envelope-opened");
+
+      closed.classList.add("opening");
+      spawnBurst(window.innerWidth / 2, window.innerHeight / 3, 18);
+
+      setTimeout(() => {
+        closed.classList.add("hidden");
+        opened.classList.remove("hidden");
+      }, 340);
+    }
+
+    // Letter Page Switcher
+    function switchLetterPage(pageNum) {
+      playSoftChime(pageNum === 2 ? "G5" : "E5");
+      const p1 = document.getElementById("letter-page-1");
+      const p2 = document.getElementById("letter-page-2");
+      const b1 = document.getElementById("tab-btn-1");
+      const b2 = document.getElementById("tab-btn-2");
+
+      if (pageNum === 1) {
+        p1.classList.remove("hidden");
+        p2.classList.add("hidden");
+        b1.className = "flex-1 py-1.5 px-3 rounded-full text-xs font-bold bg-white text-[#df4c84] shadow-sm transition-all cursor-pointer";
+        b2.className = "flex-1 py-1.5 px-3 rounded-full text-xs font-bold text-[#8a6272] hover:text-[#df4c84] transition-all cursor-pointer";
+      } else {
+        p1.classList.add("hidden");
+        p2.classList.remove("hidden");
+        b2.className = "flex-1 py-1.5 px-3 rounded-full text-xs font-bold bg-white text-[#df4c84] shadow-sm transition-all cursor-pointer";
+        b1.className = "flex-1 py-1.5 px-3 rounded-full text-xs font-bold text-[#8a6272] hover:text-[#df4c84] transition-all cursor-pointer";
+      }
+    }
+
+    // Section 2: Flip Cards
+    function toggleCard(cardEl) {
+      cardEl.classList.toggle("flipped");
+      playSoftChime(cardEl.classList.contains("flipped") ? "G5" : "E5");
+    }
+
+    // Section 3: Unlimited Kisses and Comfort Dispenser
+    let kissCounter = 0;
+    const whisperedNotes = [
+      "mwah forehead kiss for my pretty princess 💋🤍",
+      "sending u the biggest warmest hug right now 🤗🤍",
+      "i love u sosososo much amiii 💖",
+      "ur safe with me always baby ☁️✨",
+      "my whole heart belongs to u 👑🤍",
+      "sending 1000 warm bear cuddles right now 🧸💕",
+      "zero pressure tonight my love js rest and breathe 🌷",
+      "im so proud of u for getting through hard days 🥺🤍",
+      "u are literally my greatest blessing ever ✨",
+      "mwahhh endless kisses for my sweet girl 💋💋"
+    ];
+
+    function triggerBearHug(stageEl, event) {
+      if (!stageEl) return;
+      stageEl.classList.remove("kissing");
+      void stageEl.offsetWidth;
+      stageEl.classList.add("kissing");
+      playSoftChime("G5");
+      if (event) {
+        const rect = stageEl.getBoundingClientRect();
+        const x = event.clientX || (rect.left + rect.width / 2);
+        const y = event.clientY || (rect.top + rect.height / 2);
+        spawnBurst(x, y, 8);
+      }
+    }
+
+    function dispenseKiss(event) {
+      kissCounter++;
+      document.getElementById("kiss-count").textContent = kissCounter;
+
+      // Make the dispenser brown & white bears lean in and kiss
+      const dispenserBears = document.getElementById("dispenser-bears");
+      if (dispenserBears) {
+        dispenserBears.classList.remove("kissing");
+        void dispenserBears.offsetWidth;
+        dispenserBears.classList.add("kissing");
+      }
+
+      // Cycle whispered notes without repeating back-to-back
+      const msgEl = document.getElementById("kiss-message");
+      let nextMsg = whisperedNotes[Math.floor(Math.random() * whisperedNotes.length)];
+      if (nextMsg === msgEl.textContent) {
+        nextMsg = whisperedNotes[(whisperedNotes.indexOf(nextMsg) + 1) % whisperedNotes.length];
+      }
+      msgEl.textContent = nextMsg;
+
+      // Musical notes
+      const notes = ["C5", "D5", "E5", "G5", "A5", "C6"];
+      playSoftChime(notes[kissCounter % notes.length]);
+
+      // Milestones at 5, 10, 20 taps
+      const banner = document.getElementById("milestone-banner");
+      if (kissCounter === 5) {
+        banner.textContent = "✨ 5 kisses unlocked unlimited forehead kisses forever 🤍";
+        banner.classList.remove("hidden");
+      } else if (kissCounter === 10) {
+        banner.textContent = "👑 10 kisses unlocked official sweetest princess award ✨";
+        banner.classList.remove("hidden");
+      } else if (kissCounter === 20) {
+        banner.textContent = "💖 20 kisses unlocked ur boy is completely melted rn mwahhh 🐾";
+        banner.classList.remove("hidden");
+      }
+
+      // Spawn burst particles
+      const rect = event.currentTarget.getBoundingClientRect();
+      const x = event.clientX || (rect.left + rect.width / 2);
+      const y = event.clientY || (rect.top + rect.height / 2);
+      spawnBurst(x, y, 12);
+    }
+
+    // Section 4: Cozy Coupon Selector
+    function selectCoupon(cardEl) {
+      cardEl.classList.toggle("selected");
+      playSoftChime("G5");
+
+      const feedback = document.getElementById("coupon-feedback");
+      const anySelected = document.querySelectorAll(".coupon-card.selected").length > 0;
+
+      if (anySelected) {
+        feedback.classList.remove("hidden");
+        const rect = cardEl.getBoundingClientRect();
+        spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 7);
+      } else {
+        feedback.classList.add("hidden");
+      }
+    }
+
+    // Helper: Spawn floating burst particles
+    function spawnBurst(x, y, amount = 10) {
+      const emojis = ["🤍", "💋", "🩷", "✨", "🌸", "💖", "🐾"];
+      for (let i = 0; i < amount; i++) {
+        const p = document.createElement("span");
+        p.className = "burst-particle";
+        p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        p.style.left = x + "px";
+        p.style.top = y + "px";
+        p.style.fontSize = (18 + Math.random() * 14) + "px";
+
+        const angle = (Math.PI * 2 * i) / amount + (Math.random() * 0.5);
+        const distance = 45 + Math.random() * 90;
+        const dx = Math.cos(angle) * distance + "px";
+        const dy = Math.sin(angle) * distance + "px";
+
+        p.style.setProperty("--dx", dx);
+        p.style.setProperty("--dy", dy);
+
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 1480);
+      }
+    }
+
+    // Finale: Playful "no im still mad" Button
+    let dodgeCount = 0;
+    let transformedToYes = false;
+    const teaseLines = [
+      "pleaseee my sweet princess 🥺🤍",
+      "im begging nicely right now 🥺🤍",
+      "i brought unlimited cuddles and zero pressure 🧸🤍",
+      "one more tap and this button gives up 😭🤍"
+    ];
+
+    function dodgeButton() {
+      if (transformedToYes) return;
+
+      const noBtn = document.getElementById("no-btn");
+      const yesBtn = document.getElementById("yes-btn");
+      const teaseEl = document.getElementById("dodge-tease");
+
+      playSoftChime("D5");
+
+      if (dodgeCount >= 4) {
+        transformedToYes = true;
+        noBtn.style.transform = "translate(0px, 0px) scale(1)";
+        noBtn.className = "squishy-btn text-white font-bold text-base sm:text-lg px-7 py-4 rounded-full cursor-pointer transition-all duration-300";
+        noBtn.textContent = "okay fine i love u too 🤍";
+        teaseEl.textContent = "hehehe both buttons say yes now mwah 🤍";
+        return;
+      }
+
+      teaseEl.textContent = teaseLines[dodgeCount % teaseLines.length];
+      dodgeCount++;
+
+      // Grow the main Yes button slightly
+      const scale = Math.min(1 + dodgeCount * 0.08, 1.35);
+      yesBtn.style.transform = `scale(${scale})`;
+
+      // Hop playfully within safe viewport bounds
+      const maxOffsetX = window.innerWidth < 500 ? 55 : 110;
+      const maxOffsetY = 30;
+      const randX = (Math.random() * 2 - 1) * maxOffsetX;
+      const randY = (Math.random() * 2 - 1) * maxOffsetY;
+      const shrink = Math.max(1 - dodgeCount * 0.06, 0.78);
+
+      noBtn.style.transform = `translate(${randX}px, ${randY}px) scale(${shrink})`;
+    }
+
+    function handleNoClick() {
+      if (transformedToYes) {
+        acceptForgiveness();
+      } else {
+        dodgeButton();
+      }
+    }
+
+    function acceptForgiveness() {
+      playSoftChime(["C5", "E5", "G5", "C6"]);
+
+      const prompt = document.getElementById("forgive-prompt");
+      const cert = document.getElementById("forgive-certificate");
+
+      prompt.classList.add("hidden");
+      cert.classList.remove("hidden");
+
+      // Full-screen celebratory heart & sparkle burst
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      spawnBurst(w * 0.25, h * 0.55, 18);
+      setTimeout(() => spawnBurst(w * 0.75, h * 0.55, 18), 160);
+      setTimeout(() => spawnBurst(w * 0.5, h * 0.4, 24), 320);
+      setTimeout(() => spawnBurst(w * 0.35, h * 0.7, 16), 480);
+      setTimeout(() => spawnBurst(w * 0.65, h * 0.7, 16), 620);
+    }
+
+    // Initialize ambient background hearts on page load
+    window.addEventListener("DOMContentLoaded", createAmbientHearts);
+  </script>
+</body>
+</html>
